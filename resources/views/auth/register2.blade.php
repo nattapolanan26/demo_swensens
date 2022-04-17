@@ -1,4 +1,6 @@
 @extends('layouts.app')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 <style>
     .error {
         color: red !important;
@@ -197,6 +199,9 @@
         font-size: 1.2em;
     }
 
+    .modal-dialog {
+        margin: 20vh auto 0px auto
+    }
 </style>
 @section('content')
     <main class="sm:container sm:mx-auto page-checkout-customer-info">
@@ -249,9 +254,9 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title delivery_info">ที่อยู่ปัจจุบัน</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                          </button>
+                          </button> --}}
                     </div>
                     <div class="modal-body">
                         <form action="{{ route('register-step-3') }}" id="new_location"
