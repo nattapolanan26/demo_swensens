@@ -16,8 +16,12 @@ class CreateProducts extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->string('product_id', 10)->primary();
             $table->string('product_name');
+            $table->string('price', 10);
             $table->string('product_category_id', 10);
+            $table->string('unit_id', 5);
+            $table->text('description');
             $table->foreign('product_category_id')->references('product_category_id')->on('product_categorys')->onUpdate('restrict')->onDelete('restrict');
+            $table->foreign('unit_id')->references('unit_id')->on('product_units')->onUpdate('restrict')->onDelete('restrict');
             $table->timestamps();
         });
     }
